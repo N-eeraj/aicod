@@ -1,31 +1,39 @@
 <script lang="ts">
-const startTime = import.meta.env.VITE_START_DATETIME
-const duration = import.meta.env.VITE_DURATION_HOURS
+  import Counter from "./Counter.svelte"
 
-let now = $state(new Date().getTime())
-const startTimestamp = new Date(startTime).getTime()
-const endTimestamp = startTimestamp + duration * 3600000
+  const startTime = import.meta.env.VITE_START_DATETIME
+  const duration = import.meta.env.VITE_DURATION_HOURS
 
-setInterval(() => {
-  now += 1000
-}, 1000)
+  let now = $state(new Date().getTime())
+  const startTimestamp = new Date(startTime).getTime()
+  const endTimestamp = startTimestamp + duration * 3600000
 
-const timeToStart = $derived.by(() => {
-  return startTimestamp - now
-})
-const timeToEnd = $derived.by(() => {
-  return endTimestamp - now
-})
+  const hasStarted = $derived(Boolean(startTimestamp - now < 0))
+  const hasEnded = $derived(Boolean(endTimestamp - now < 0))
+
+  setInterval(() => {
+    now += 1000
+  }, 1000)
 </script>
 
-<main>
-{#if timeToStart > 0}
+<main class="flex justify-center items-center h-svh">
+{#if !hasStarted}
 	<p>
-    {timeToStart}
+    Starts in
+    <Counter
+      end={startTimestamp}
+      start={now} />
+  </p>
+{:else if !hasEnded}
+	<p>
+    Ends in
+    <Counter
+      end={endTimestamp}
+      start={now} />
   </p>
 {:else}
-	<p>
-    {timeToEnd}
+  <p>
+    Done
   </p>
 {/if}
 </main>
