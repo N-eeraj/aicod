@@ -5,7 +5,7 @@
   <img
     src="/heart.png"
     alt="heart"
-    class="size-5" />
+    class="size-5 animate-bounce" />
   <span>
     Squad 7
   </span>

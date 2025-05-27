@@ -25,7 +25,7 @@
   <img
     src="https://i.pinimg.com/originals/e2/8d/61/e28d61b0ce1b686bbd9c19b98912101f.gif"
     alt="matrix-rain"
-    class="fixed size-full opacity-20 -z-10" />
+    class="fixed size-full top-0 opacity-20 -z-10" />
   <img
     src="/logo.svg"
     alt="logo"
