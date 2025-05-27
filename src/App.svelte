@@ -14,12 +14,18 @@
   const hasStarted = $derived(Boolean(startTimestamp - now < 0))
   const hasEnded = $derived(Boolean(endTimestamp - now < 0))
 
+  navigator.wakeLock.request("screen")
+
   setInterval(() => {
     now += 1000
   }, 1000)
 </script>
 
-<main class="flex justify-center items-center h-svh">
+<main class="flex justify-center items-center h-svh pt-8">
+  <img
+    src="/logo.svg"
+    alt="logo"
+    class="fixed top-16 w-1/2 max-w-64" />
   {#if !hasStarted}
     <StartsIn
       now={now}

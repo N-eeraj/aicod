@@ -1,7 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 @import "tailwindcss";
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   color-scheme: light dark;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -9,16 +9,27 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-@theme {
-  --color-background: hsl(0, 0, 7%);
-  --color-foreground:	hsl(150, 100%, 94%);
-  --color-primary: hsl(155, 100%, 74%);
+@font-face {
+  font-family: Minercraftory;
+  font-style: normal;
+  font-weight: 200 700;
+  font-display: swap;
+  src: url("/Minercraftory.ttf") format("woff2");
 }
 
+@theme {
+  --color-background: #011017;
+  --color-foreground:	#ffffff;
+  --color-primary: #64c474;
+  --font-digit: "Minercraftory", "sans-serif";
+  --font-pixel: "VT323", sans-serif; 
+}
+
+
 html {
-  @apply bg-background text-foreground;
+  @apply bg-background text-foreground font-pixel;
 
   body {
-    @apply min-h-svh;
+    @apply min-h-svh bg-[url("/background.png")];
   }
 }
