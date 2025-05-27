@@ -25,7 +25,7 @@
   <img
     src="/logo.svg"
     alt="logo"
-    class="fixed top-16 w-1/2 max-w-64" />
+    class="fixed top-16 w-1/2 max-w-42" />
   {#if !hasStarted}
     <StartsIn
       now={now}
