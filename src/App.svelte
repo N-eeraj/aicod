@@ -23,6 +23,10 @@
 
 <main class="flex justify-center items-center h-svh pt-8">
   <img
+    src="https://i.pinimg.com/originals/e2/8d/61/e28d61b0ce1b686bbd9c19b98912101f.gif"
+    alt="matrix-rain"
+    class="fixed size-full opacity-20 -z-10" />
+  <img
     src="/logo.svg"
     alt="logo"
     class="fixed top-16 w-1/2 max-w-42" />
