@@ -10,6 +10,6 @@
     {String(counter).padStart(2, "0")}
   </strong>
   <span class="text-lg md:text-3xl">
-    {label.toUpperCase()}
+    {label}
   </span>
 </div>

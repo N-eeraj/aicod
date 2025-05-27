@@ -8,7 +8,7 @@
   } = $props()
 </script>
 
-<Container title="Ends In">
+<Container title="ENDS IN">
   <Counter
     end={endTimestamp}
     start={now} />

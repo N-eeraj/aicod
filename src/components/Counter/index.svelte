@@ -20,17 +20,17 @@
 <div class="flex gap-x-2 text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl">
   <Digit
     counter={dd}
-    label="Days" />
+    label="DAY" />
   :
   <Digit
     counter={hh}
-    label="Hours" />
+    label="HOURS" />
   :
   <Digit
     counter={mm}
-    label="Minutes" />
+    label="MINUTES" />
   :
   <Digit
     counter={ss}
-    label="Seconds" />
+    label="SECONDS" />
 </div>
