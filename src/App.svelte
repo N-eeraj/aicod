@@ -1,5 +1,8 @@
 <script lang="ts">
-  import Counter from "./Counter.svelte"
+  import StartsIn from "./components/StartsIn.svelte"
+  import EndsIn from "./components/EndsIn.svelte"
+  import Completed from "./components/Completed.svelte"
+  import Footer from "./components/Footer.svelte"
 
   const startTime = import.meta.env.VITE_START_DATETIME
   const duration = import.meta.env.VITE_DURATION_HOURS
@@ -17,23 +20,16 @@
 </script>
 
 <main class="flex justify-center items-center h-svh">
-{#if !hasStarted}
-	<p>
-    Starts in
-    <Counter
-      end={startTimestamp}
-      start={now} />
-  </p>
-{:else if !hasEnded}
-	<p>
-    Ends in
-    <Counter
-      end={endTimestamp}
-      start={now} />
-  </p>
-{:else}
-  <p>
-    Done
-  </p>
-{/if}
+  {#if !hasStarted}
+    <StartsIn
+      now={now}
+      startTimestamp={startTimestamp} />
+  {:else if !hasEnded}
+    <EndsIn
+      now={now}
+      endTimestamp={endTimestamp} />
+  {:else}
+    <Completed />
+  {/if}
+  <Footer />
 </main>
