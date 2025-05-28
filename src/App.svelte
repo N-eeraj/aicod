@@ -5,6 +5,10 @@
   import Sfx from "./components/Sfx.svelte"
   import Footer from "./components/Footer.svelte"
 
+  if (window.location.href !== import.meta.env.VITE_OG_URL) {
+    window.location.href = import.meta.env.VITE_OG_URL
+  }
+
   const startTime = import.meta.env.VITE_START_DATETIME
   const duration = import.meta.env.VITE_DURATION_HOURS
 
