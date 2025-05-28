@@ -3,7 +3,7 @@
     Made with
   </span>
   <img
-    src="/heart.png"
+    src="/images/heart.png"
     alt="heart"
     class="size-5 animate-bounce" />
   <span>

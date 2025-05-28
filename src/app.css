@@ -14,7 +14,7 @@
   font-style: normal;
   font-weight: 200 700;
   font-display: swap;
-  src: url("/Minercraftory.ttf") format("woff2");
+  src: url("/fonts/Minercraftory.ttf") format("woff2");
 }
 
 @theme {
@@ -30,6 +30,6 @@ html {
   @apply bg-background text-foreground font-pixel;
 
   body {
-    @apply min-h-svh bg-[url("/background.png")];
+    @apply min-h-svh bg-[url("/images/background.png")];
   }
 }

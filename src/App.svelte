@@ -1,7 +1,8 @@
 <script lang="ts">
-  import StartsIn from "./components/StartsIn.svelte"
-  import EndsIn from "./components/EndsIn.svelte"
+  import Counter from "./components/Counter/index.svelte"
+  import Container from "./components/Counter/Container.svelte"
   import Completed from "./components/Completed.svelte"
+  import Sfx from "./components/Sfx.svelte"
   import Footer from "./components/Footer.svelte"
 
   const startTime = import.meta.env.VITE_START_DATETIME
@@ -23,23 +24,26 @@
 
 <main class="flex justify-center items-center h-svh pt-8">
   <img
-    src="https://i.pinimg.com/originals/e2/8d/61/e28d61b0ce1b686bbd9c19b98912101f.gif"
+    src="/images/background.gif"
     alt="matrix-rain"
     class="fixed size-full top-0 opacity-20 -z-10" />
+
   <img
-    src="/logo.svg"
+    src="/images/logo.svg"
     alt="logo"
     class="fixed top-16 w-1/2 max-w-42" />
-  {#if !hasStarted}
-    <StartsIn
-      now={now}
-      startTimestamp={startTimestamp} />
-  {:else if !hasEnded}
-    <EndsIn
-      now={now}
-      endTimestamp={endTimestamp} />
+
+    <Sfx />
+
+  {#if !hasEnded}
+    <Container title={hasStarted ? "ENDS IN" : "STARTS IN"}>
+      <Counter
+        end={hasStarted ? endTimestamp : startTimestamp}
+        start={now} />
+    </Container>
   {:else}
     <Completed />
   {/if}
+
   <Footer />
 </main>
