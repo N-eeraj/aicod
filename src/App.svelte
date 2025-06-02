@@ -23,13 +23,15 @@
 
   navigator.wakeLock.request("screen")
 
-  setInterval(() => {
+  const interval = setInterval(() => {
     now += 1000
     if (isTicking) {
       sfx.currentTime = 0
       sfx.play()
     }
   }, 1000)
+
+  if (hasEnded) clearInterval(interval)
 </script>
 
 <main class="flex justify-center items-center h-svh pt-8">
