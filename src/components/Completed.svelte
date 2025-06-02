@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { Confetti } from "svelte-confetti"
+
   const WINNERS = [
     "SQUAD 1",
     "SQUAD 2",
@@ -19,6 +21,17 @@
           </h2>
         </div>
       {/each}
+    </div>
+
+    <div class="fixed -top-12 left-0 h-dvh w-screen flex justify-center overflow-hidden pointer-events-none">
+      <Confetti
+        x={[-5, 5]}
+        y={[0, 0.1]}
+        delay={[500, 2000]}
+        infinite
+        duration={5000}
+        amount={200}
+        fallDistance="100vh" />
     </div>
   {:else}
     <div class="font-digit text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl text-primary">
